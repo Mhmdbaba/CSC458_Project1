@@ -36,13 +36,13 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\Zombies.cs" />
      <Compile Include="Assets\Scripts\PlayerMovementScript.cs" />
      <Compile Include="Assets\Scripts\BulletScript.cs" />
      <Compile Include="Assets\Scripts\GunScript.cs" />
      <Compile Include="Assets\Scripts\MouseLookScript.cs" />
      <Compile Include="Assets\Scripts\DestroyAfterTimeParticle.cs" />
      <Compile Include="Assets\Scripts\GunInventory.cs" />
-     <Compile Include="Assets\Scripts\Zombies.cs" />
      <Compile Include="Assets\Scripts\Spawner.cs" />
     <Reference Include="UnityEngine">
         <HintPath>C:\Program Files\Unity\Hub\Editor\2021.2.8f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
