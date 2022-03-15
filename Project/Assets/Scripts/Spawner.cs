@@ -8,6 +8,8 @@ public class Spawner : MonoBehaviour
 
     public GameObject[] spawners;
     public GameObject enemy;
+
+    public int counter;
     private void Start()
     {
         spawners = new GameObject[5];
@@ -15,6 +17,7 @@ public class Spawner : MonoBehaviour
         for (int i = 0; i < spawners.Length; i++){
             spawners[i] = transform.GetChild(i).gameObject;
         }
+        counter = 0;
     }
 
     private void SpawnEnemy(){
@@ -24,6 +27,10 @@ public class Spawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        /*
+        if (counter < 10){
+            SpawnEnemy();
+        }*/
         if(Input.GetKeyDown(KeyCode.T)){
             SpawnEnemy();
         }
