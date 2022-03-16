@@ -37,14 +37,16 @@
   </PropertyGroup>
   <ItemGroup>
      <Compile Include="Assets/Scripts/Zombies.cs" />
+     <Compile Include="Assets/Demo/Low poly package/Scripts/ScreenshotHandler.cs" />
      <Compile Include="Assets/Scripts/PlayerMovementScript.cs" />
      <Compile Include="Assets/Scripts/BulletScript.cs" />
      <Compile Include="Assets/Scripts/GunScript.cs" />
      <Compile Include="Assets/Scripts/MouseLookScript.cs" />
      <Compile Include="Assets/Scripts/DestroyAfterTimeParticle.cs" />
+     <Compile Include="Assets/Demo/Low poly package/Scripts/GameHandler.cs" />
+     <Compile Include="Assets/Scripts/Spawnerr.cs" />
      <Compile Include="Assets/Scripts/GunInventory.cs" />
      <Compile Include="Assets/Scripts/Spawner.cs" />
-     <Compile Include="Assets/Scripts/Spawnerr.cs" />
      <None Include="Assets/Asset Packs/Synty - Polygon Student Sample/README - Usage Rights for these assets.txt" />
     <Reference Include="UnityEngine">
         <HintPath>/Applications/Unity/Hub/Editor/2021.2.8f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.dll</HintPath>
