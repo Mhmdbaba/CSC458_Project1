@@ -44,7 +44,7 @@
      <Compile Include="Assets\Scripts\DestroyAfterTimeParticle.cs" />
      <Compile Include="Assets\Scripts\GunInventory.cs" />
      <Compile Include="Assets\Scripts\Spawner.cs" />
-     <Compile Include="Assets\Scenes\Low_Poly_Survival\Scripts\SimpleCameraController.cs" />
+     <None Include="Assets\Asset Packs\Synty - Polygon Student Sample\README - Usage Rights for these assets.txt" />
     <Reference Include="UnityEngine">
         <HintPath>C:\Program Files\Unity\Hub\Editor\2021.2.8f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
     </Reference>
