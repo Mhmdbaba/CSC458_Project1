@@ -522,8 +522,9 @@ public class GunScript : MonoBehaviour {
 				print("Couldnt find the HUD_Bullets ->" + ex.StackTrace.ToString());
 			}
 		}
-		if(mls && HUD_bullets)
+		if(mls && HUD_bullets){
 			HUD_bullets.text = bulletsIHave.ToString() + " - " + bulletsInTheGun.ToString();
+		}
 
 		DrawCrosshair();
 	}

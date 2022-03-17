@@ -814,7 +814,7 @@ GameObject:
   - component: {fileID: 5074314133187171921}
   - component: {fileID: 4717572595416725021}
   - component: {fileID: 2370960764716577339}
-  - component: {fileID: 2370960764716577335}
+  - component: {fileID: 1065973780089242477}
   m_Layer: 0
   m_Name: Zombie1
   m_TagString: zombie
@@ -830,8 +830,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2214310628915398968}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 29.122772, y: 0.00000011920929, z: 9.645717}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 29.122772, y: 0.13083, z: 9.645717}
+  m_LocalScale: {x: 1, y: 0.8, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 726139754998645648}
@@ -884,6 +884,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b5d47b7b7820094896e6d54a122757d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stoppingDistance: 3.5
+  damage: 0
 --- !u!136 &2370960764716577339
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -894,22 +896,32 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.24479008
-  m_Height: 1.9592295
+  m_Radius: 0.15206051
+  m_Height: 1.9891616
   m_Direction: 1
-  m_Center: {x: 0.0023889542, y: 0.8504734, z: -0.19522429}
---- !u!114 &2370960764716577335
-MonoBehaviour:
+  m_Center: {x: 0.0023889542, y: 0.8654395, z: -0.009677887}
+--- !u!195 &1065973780089242477
+NavMeshAgent:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2214310628915398968}
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7b5d47b7b7820094896e6d54a122757d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 3
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 2.5
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
 --- !u!1 &2465088937064933093
 GameObject:
   m_ObjectHideFlags: 0
