@@ -885,7 +885,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stoppingDistance: 3.5
-  damage: 0
+  damage: 10
 --- !u!136 &2370960764716577339
 CapsuleCollider:
   m_ObjectHideFlags: 0

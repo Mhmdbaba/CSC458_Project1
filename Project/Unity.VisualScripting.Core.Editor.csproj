@@ -489,8 +489,8 @@
      <Compile Include="Packages\com.unity.visualscripting\Editor\VisualScripting.Core\Inspection\Unity\RectInspector.cs" />
      <Compile Include="Packages\com.unity.visualscripting\Editor\VisualScripting.Core\Plugin\Changelogs\LegacyLudiqGraphs\Changelog_1_2_0.cs" />
      <Compile Include="Packages\com.unity.visualscripting\Editor\VisualScripting.Core\Inspection\IndividualPropertyDrawer.cs" />
-     <Compile Include="Packages\com.unity.visualscripting\Editor\VisualScripting.Core\Inspection\Inspector.cs" />
      <Compile Include="Packages\com.unity.visualscripting\Editor\VisualScripting.Core\Meta\DictionaryKeyAtIndexMetadata.cs" />
+     <Compile Include="Packages\com.unity.visualscripting\Editor\VisualScripting.Core\Inspection\Inspector.cs" />
      <Compile Include="Packages\com.unity.visualscripting\Editor\VisualScripting.Core\Utilities\ScriptReference.cs" />
      <Compile Include="Packages\com.unity.visualscripting\Editor\VisualScripting.Core\Platforms\AotPreBuilder.cs" />
      <Compile Include="Packages\com.unity.visualscripting\Editor\VisualScripting.Core\Plugin\BoltCoreConfiguration.cs" />

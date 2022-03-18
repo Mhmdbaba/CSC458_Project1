@@ -3,19 +3,22 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-
 public class Zombies : MonoBehaviour
 {
     NavMeshAgent agent;
+    float lastAttackTime = 0f;
+    float attackCoolDown = 2f;
     GameObject target;
+
+    Animator anim;
 
     [SerializeField] float stoppingDistance = 3.5f;
     [SerializeField] float damage;
     // Start is called before the first frame update
     void Start()
     {
-
-        agent = GetComponent<NavMeshAgent>();
+        anim = GetComponent<Animator>();
+        agent = GetComponentInChildren<NavMeshAgent>();
         target = GameObject.FindGameObjectWithTag("Player");
     }
 
@@ -26,8 +29,10 @@ public class Zombies : MonoBehaviour
         float dist = Vector3.Distance(transform.position, target.transform.position);
 
         if (dist < stoppingDistance){
-            StopEnemy();
-            target.GetComponent<CharacterStats>().TakeDamage(damage);
+            StopEnemy(); 
+            if (Time.deltaTime - lastAttackTime >=  attackCoolDown){
+                lastAttackTime = Time.deltaTime;
+            }
         }
         else{
             GoToTarget();
@@ -35,11 +40,14 @@ public class Zombies : MonoBehaviour
         
     }
     private void GoToTarget(){
+        anim.SetBool("isWalking", true);
         agent.isStopped = false;
         agent.SetDestination(target.transform.position);
     }
 
     private void StopEnemy(){
         agent.isStopped = true;
+        anim.SetBool("isWalking", false);
+
     }
 }
