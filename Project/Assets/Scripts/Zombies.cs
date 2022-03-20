@@ -30,14 +30,16 @@ public class Zombies : MonoBehaviour
 
         if (dist < stoppingDistance){
             StopEnemy(); 
+            target.GetComponent<playerHealth>().takeDamage(damage);
             if (Time.deltaTime - lastAttackTime >=  attackCoolDown){
                 lastAttackTime = Time.deltaTime;
+ 
             }
         }
         else{
             GoToTarget();
         }
-        
+
     }
     private void GoToTarget(){
         anim.SetBool("isWalking", true);

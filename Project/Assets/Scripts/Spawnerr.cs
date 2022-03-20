@@ -8,6 +8,8 @@ public class Spawnerr : MonoBehaviour
 
     public GameObject enemy;
 
+    [SerializeField] int numOfZombies = 100;
+
     private void Start(){
 
         spawners = new GameObject[5];
@@ -15,7 +17,10 @@ public class Spawnerr : MonoBehaviour
         for(int i = 0; i< spawners.Length; i++){
 
             spawners[i] = transform.GetChild(i).gameObject;
+        }
 
+        for (int i = 0; i < numOfZombies; i++){
+            SpawenEnemy();
         }
 
     }

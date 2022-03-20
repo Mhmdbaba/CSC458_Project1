@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.38219112, g: 0.39282158, b: 0.44364837, a: 1}
+  m_IndirectSpecularColor: {r: 0.38218093, g: 0.3928173, b: 0.44354293, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -149,6 +149,7 @@ GameObject:
   - component: {fileID: 18206555}
   - component: {fileID: 18206557}
   - component: {fileID: 18206556}
+  - component: {fileID: 18206558}
   m_Layer: 5
   m_Name: Health
   m_TagString: Untagged
@@ -214,6 +215,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 18206554}
   m_CullTransparentMesh: 1
+--- !u!114 &18206558
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 18206554}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 170f4bfea9e5344b689448143e70657e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthbar: {fileID: 18206556}
 --- !u!1001 &20638211
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1793,15 +1807,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 460088, guid: c391f12a928274acab8576bb6030641d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.232
+      value: 0.2212
       objectReference: {fileID: 0}
     - target: {fileID: 460088, guid: c391f12a928274acab8576bb6030641d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.172
+      value: -0.1728
       objectReference: {fileID: 0}
     - target: {fileID: 460088, guid: c391f12a928274acab8576bb6030641d, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.393
+      value: 0.3948
       objectReference: {fileID: 0}
     - target: {fileID: 460088, guid: c391f12a928274acab8576bb6030641d, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1873,6 +1887,26 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c391f12a928274acab8576bb6030641d, type: 3}
+--- !u!1 &203209293 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 173116, guid: c391f12a928274acab8576bb6030641d, type: 3}
+  m_PrefabInstance: {fileID: 203209292}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &203209294
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 203209293}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6688620a1c7240fb91a29049b7496f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
+  healthbar: {fileID: 18206558}
+  isDead: 0
 --- !u!4 &204446746 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1110677920876004375, guid: f2cf0753809dc5245aa3e8058142ef42, type: 3}
@@ -3934,7 +3968,7 @@ Light:
   serializedVersion: 10
   m_Type: 1
   m_Shape: 0
-  m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
@@ -3974,7 +4008,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 4
+  m_Lightmapping: 2
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -3992,14 +4026,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 542107748}
-  m_LocalRotation: {x: 0.40821788, y: -0.23456968, z: 0.10938163, w: 0.8754261}
-  m_LocalPosition: {x: -200, y: 100, z: -400}
+  m_LocalRotation: {x: 0.6830127, y: -0.18301266, z: 0.18301266, w: 0.6830127}
+  m_LocalPosition: {x: -334, y: 99.49, z: -131}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+  m_LocalEulerAnglesHint: {x: 90, y: -30, z: 0}
 --- !u!1 &543651518
 GameObject:
   m_ObjectHideFlags: 0
@@ -9846,7 +9880,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -0.27398682, y: -0.87}
+  m_AnchoredPosition: {x: -0.2614, y: -0.87}
   m_SizeDelta: {x: 1, y: 1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1438769412
