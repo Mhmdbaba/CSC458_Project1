@@ -7,6 +7,7 @@ public class playerHealth : MonoBehaviour
 
     public float maxHealth = 100;
     public healthBar healthbar;
+    [SerializeField]
     private float currHealth;
 
     public bool isDead =false;
@@ -23,7 +24,7 @@ public class playerHealth : MonoBehaviour
     public void takeDamage(float damage){
 
         currHealth -= damage;
-        healthbar.updateHealth((float) currHealth / (float) maxHealth); 
+        //healthbar.updateHealth((float) currHealth / (float) maxHealth); 
 
     }
 

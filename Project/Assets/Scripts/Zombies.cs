@@ -6,8 +6,8 @@ using UnityEngine.AI;
 public class Zombies : MonoBehaviour
 {
     NavMeshAgent agent;
-    float lastAttackTime = 0f;
-    float attackCoolDown = 2f;
+    float lastAttackTime = 0;
+    float attackCoolDown = 2;
     GameObject target;
 
     Animator anim;
@@ -30,11 +30,10 @@ public class Zombies : MonoBehaviour
 
         if (dist < stoppingDistance){
             StopEnemy(); 
-            target.GetComponent<playerHealth>().takeDamage(damage);
-            if (Time.deltaTime - lastAttackTime >=  attackCoolDown){
-                lastAttackTime = Time.deltaTime;
- 
-            }
+            //if (Time.fixedDeltaTime - lastAttackTime >=  attackCoolDown){
+                lastAttackTime = Time.fixedDeltaTime;
+                target.GetComponent<playerHealth>().takeDamage(damage); 
+            //}
         }
         else{
             GoToTarget();
