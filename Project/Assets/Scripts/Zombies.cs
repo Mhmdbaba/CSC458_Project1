@@ -28,12 +28,14 @@ public class Zombies : MonoBehaviour
 
         float dist = Vector3.Distance(transform.position, target.transform.position);
 
+
+        
         if (dist < stoppingDistance){
             StopEnemy(); 
-            //if (Time.deltaTime - lastAttackTime >=  attackCoolDown){
+            if (Time.deltaTime*1000 - lastAttackTime >=  attackCoolDown){
                 lastAttackTime = Time.deltaTime;
                 target.GetComponent<playerHealth>().takeDamage(damage); 
-            //}
+            }
         }
         else{
             GoToTarget();

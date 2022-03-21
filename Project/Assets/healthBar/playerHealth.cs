@@ -10,7 +10,7 @@ public class playerHealth : MonoBehaviour
     [SerializeField]
     private float currHealth;
 
-    public bool isDead =false;
+    public bool isDead = false;
 
     // Start is called before the first frame update
     void Start()
@@ -32,11 +32,14 @@ public class playerHealth : MonoBehaviour
     public void takeDamage(float damage){
 
         currHealth -= damage;
-        healthbar.updateHealth((float) currHealth / (float) maxHealth); 
+        Debug.Log(currHealth);
+        healthbar.updateHealth(currHealth / maxHealth); 
+
+        
 
     }
 
-    public virtual void CheckHealth(){
+    public void CheckHealth(){
         if (currHealth >= maxHealth){
             currHealth = maxHealth;
         }
