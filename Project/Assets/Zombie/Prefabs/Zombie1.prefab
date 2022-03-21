@@ -884,7 +884,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b5d47b7b7820094896e6d54a122757d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stoppingDistance: 3.5
+  stoppingDistance: 4.5
   damage: 1
 --- !u!136 &2370960764716577339
 CapsuleCollider:

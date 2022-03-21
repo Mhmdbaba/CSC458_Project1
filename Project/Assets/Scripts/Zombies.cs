@@ -30,8 +30,8 @@ public class Zombies : MonoBehaviour
 
         if (dist < stoppingDistance){
             StopEnemy(); 
-            //if (Time.fixedDeltaTime - lastAttackTime >=  attackCoolDown){
-                lastAttackTime = Time.fixedDeltaTime;
+            //if (Time.deltaTime - lastAttackTime >=  attackCoolDown){
+                lastAttackTime = Time.deltaTime;
                 target.GetComponent<playerHealth>().takeDamage(damage); 
             //}
         }

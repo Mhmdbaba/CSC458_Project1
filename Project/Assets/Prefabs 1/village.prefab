@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3562282304423023316}
   m_Layer: 0
-  m_Name: Sidon
+  m_Name: village
   m_TagString: LevelPart
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -20,11 +20,19 @@ public class playerHealth : MonoBehaviour
         
     }
 
+    void Update(){
+        CheckHealth();
+
+        if (isDead){
+            Application.Quit();
+        }
+    }
+
     // Update is called once per frame
     public void takeDamage(float damage){
 
         currHealth -= damage;
-        //healthbar.updateHealth((float) currHealth / (float) maxHealth); 
+        healthbar.updateHealth((float) currHealth / (float) maxHealth); 
 
     }
 

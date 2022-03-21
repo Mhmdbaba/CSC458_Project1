@@ -616,7 +616,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3562282304423023317, guid: 32b3edc87edb747f490691c10a92b548, type: 3}
       propertyPath: m_Name
-      value: Sidon (10)
+      value: village (10)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 32b3edc87edb747f490691c10a92b548, type: 3}
@@ -678,7 +678,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3562282304423023317, guid: 32b3edc87edb747f490691c10a92b548, type: 3}
       propertyPath: m_Name
-      value: Sidon (2)
+      value: village (2)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 32b3edc87edb747f490691c10a92b548, type: 3}
@@ -1004,7 +1004,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3562282304423023317, guid: 32b3edc87edb747f490691c10a92b548, type: 3}
       propertyPath: m_Name
-      value: Sidon (6)
+      value: village (6)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 32b3edc87edb747f490691c10a92b548, type: 3}
@@ -1537,7 +1537,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3562282304423023317, guid: 32b3edc87edb747f490691c10a92b548, type: 3}
       propertyPath: m_Name
-      value: Sidon (1)
+      value: village (1)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 32b3edc87edb747f490691c10a92b548, type: 3}
@@ -1659,7 +1659,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3562282304423023317, guid: 32b3edc87edb747f490691c10a92b548, type: 3}
       propertyPath: m_Name
-      value: Sidon (3)
+      value: village (3)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 32b3edc87edb747f490691c10a92b548, type: 3}
@@ -1847,7 +1847,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 479812, guid: c391f12a928274acab8576bb6030641d, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 479812, guid: c391f12a928274acab8576bb6030641d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2303,7 +2303,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3562282304423023317, guid: 32b3edc87edb747f490691c10a92b548, type: 3}
       propertyPath: m_Name
-      value: Sidon (4)
+      value: village (4)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 32b3edc87edb747f490691c10a92b548, type: 3}
@@ -3780,7 +3780,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &525954179 stripped
 Transform:
@@ -4250,7 +4250,7 @@ Transform:
   - {fileID: 1530386755}
   - {fileID: 1305914540}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &544295365
 PrefabInstance:
@@ -5145,7 +5145,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3562282304423023317, guid: 32b3edc87edb747f490691c10a92b548, type: 3}
       propertyPath: m_Name
-      value: Sidon
+      value: village
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 32b3edc87edb747f490691c10a92b548, type: 3}
@@ -6790,7 +6790,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &941558477 stripped
 Transform:
@@ -8333,7 +8333,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3562282304423023317, guid: 32b3edc87edb747f490691c10a92b548, type: 3}
       propertyPath: m_Name
-      value: Sidon (7)
+      value: village (7)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 32b3edc87edb747f490691c10a92b548, type: 3}
@@ -10478,7 +10478,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3562282304423023317, guid: 32b3edc87edb747f490691c10a92b548, type: 3}
       propertyPath: m_Name
-      value: Sidon (5)
+      value: village (5)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 32b3edc87edb747f490691c10a92b548, type: 3}
@@ -11661,7 +11661,7 @@ Transform:
   - {fileID: 583560846}
   - {fileID: 1552351189}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1579925899
 PrefabInstance:
@@ -12478,7 +12478,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3562282304423023317, guid: 32b3edc87edb747f490691c10a92b548, type: 3}
       propertyPath: m_Name
-      value: Sidon (8)
+      value: village (8)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 32b3edc87edb747f490691c10a92b548, type: 3}
@@ -14581,7 +14581,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3562282304423023317, guid: 32b3edc87edb747f490691c10a92b548, type: 3}
       propertyPath: m_Name
-      value: Sidon (9)
+      value: village (9)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 32b3edc87edb747f490691c10a92b548, type: 3}
@@ -14812,7 +14812,7 @@ MonoBehaviour:
   - {fileID: 447549483}
   - {fileID: 458218357}
   enemy: {fileID: 2214310628915398968, guid: 5fdace7886db8fe43a09ccec315bd9b0, type: 3}
-  numOfZombies: 100
+  numOfZombies: 10
 --- !u!4 &2122560354
 Transform:
   m_ObjectHideFlags: 0
@@ -14831,7 +14831,7 @@ Transform:
   - {fileID: 447549484}
   - {fileID: 458218358}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &2123533362 stripped
 Transform:
