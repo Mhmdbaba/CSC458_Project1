@@ -6,8 +6,6 @@ using UnityEngine.AI;
 public class Zombies : MonoBehaviour
 {
     NavMeshAgent agent;
-    float lastAttackTime = 0;
-    float attackCoolDown = 2;
     GameObject target;
 
     Animator anim;
@@ -28,14 +26,9 @@ public class Zombies : MonoBehaviour
 
         float dist = Vector3.Distance(transform.position, target.transform.position);
 
-
-        
         if (dist < stoppingDistance){
             StopEnemy(); 
-            if (Time.deltaTime*1000 - lastAttackTime >=  attackCoolDown){
-                lastAttackTime = Time.deltaTime;
-                target.GetComponent<playerHealth>().takeDamage(damage); 
-            }
+            WaitAndAttack(2f);
         }
         else{
             GoToTarget();
@@ -52,5 +45,27 @@ public class Zombies : MonoBehaviour
         agent.isStopped = true;
         anim.SetBool("isWalking", false);
 
+    }
+
+    private void Attacking(){
+        // agent.attacking = true;
+        anim.SetBool("isAttacking", true);
+        target.GetComponent<playerHealth>().takeDamage(damage); 
+
+    }
+
+    private void notAttacking(){
+        // agent.attacking = false;
+        anim.SetBool("isAttacking", false);
+
+    }
+
+    IEnumerator WaitAndAttack(float waitTime)
+    {
+        Attacking();
+        notAttacking();
+        yield return new WaitForSeconds(waitTime);
+
+        
     }
 }

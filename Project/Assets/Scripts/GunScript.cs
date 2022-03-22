@@ -20,9 +20,9 @@ public class GunScript : MonoBehaviour {
 
 	[Header("Bullet properties")]
 	[Tooltip("Preset value to tell with how many bullets will our waepon spawn aside.")]
-	public float bulletsIHave = 20;
+	public float bulletsIHave = 20f;
 	[Tooltip("Preset value to tell with how much bullets will our waepon spawn inside rifle.")]
-	public float bulletsInTheGun = 5;
+	public float bulletsInTheGun = 5f;
 	[Tooltip("Preset value to tell how much bullets can one magazine carry.")]
 	public float amountOfBulletsPerLoad = 5;
 
@@ -89,8 +89,6 @@ public class GunScript : MonoBehaviour {
 		PositionGun();
 
 		Shooting();
-		MeeleAttack();
-		LockCameraWhileMelee ();
 
 		Sprint(); //iff we have the gun you sprint from here, if we are gunless then its called from movement script
 
@@ -107,13 +105,11 @@ public class GunScript : MonoBehaviour {
 	void FixedUpdate(){
 		RotationGun ();
 
-		MeeleAnimationsStates ();
-
 		/*
 		 * Changing some values if we are aiming, like sensitity, zoom racion and position of the waepon.
 		 */
 		//if aiming
-		if(Input.GetAxis("Fire2") != 0 && !reloading && !meeleAttack){
+		if(Input.GetAxis("Fire2") != 0 && !reloading){
 			gunPrecision = gunPrecision_aiming;
 			recoilAmount_x = recoilAmount_x_;
 			recoilAmount_y = recoilAmount_y_;
@@ -183,7 +179,7 @@ public class GunScript : MonoBehaviour {
 	 * Also max speed is connected to the animator which will trigger the run animation.
 	 */
 	void Sprint(){// Running();  so i can find it with CTRL + F
-		if (Input.GetAxis ("Vertical") > 0 && Input.GetAxisRaw ("Fire2") == 0 && meeleAttack == false && Input.GetAxisRaw ("Fire1") == 0) {
+		if (Input.GetAxis ("Vertical") > 0 && Input.GetAxisRaw ("Fire2") == 0 && Input.GetAxisRaw ("Fire1") == 0) {
 			if (Input.GetKeyDown (KeyCode.LeftShift)) {
 				if (pmS.maxSpeed == walkingSpeed) {
 					pmS.maxSpeed = runningSpeed;//sets player movement peed to max
@@ -199,54 +195,10 @@ public class GunScript : MonoBehaviour {
 	}
 
 	[HideInInspector]
-	public bool meeleAttack;
-	[HideInInspector]
 	public bool aiming;
-	/*
-	 * Checking if meeleAttack is already running.
-	 * If we are not reloading we can trigger the MeeleAttack animation from the IENumerator.
-	 */
-	void MeeleAnimationsStates(){
-		if (handsAnimator) {
-			meeleAttack = handsAnimator.GetCurrentAnimatorStateInfo (0).IsName (meeleAnimationName);
-			aiming = handsAnimator.GetCurrentAnimatorStateInfo (0).IsName (aimingAnimationName);	
-		}
-	}
-	/*
-	* User inputs meele attack with Q in keyboard start the coroutine for animation and damage attack.
-	*/
-	void MeeleAttack(){	
 
-		if(Input.GetKeyDown(KeyCode.Q) && !meeleAttack){			
-			StartCoroutine("AnimationMeeleAttack");
-		}
-	}
-	/*
-	* Sets meele animation to play.
-	*/
-	IEnumerator AnimationMeeleAttack(){
-		handsAnimator.SetBool("meeleAttack",true);
-		//yield return new WaitForEndOfFrame();
-		yield return new WaitForSeconds(0.1f);
-		handsAnimator.SetBool("meeleAttack",false);
-	}
 
 	private float startLook, startAim, startRun;
-	/*
-	* Setting the mouse sensitvity lower when meele attack and waits till it ends.
-	*/
-	void LockCameraWhileMelee(){
-		if (meeleAttack) {
-			mouseSensitvity_notAiming = 2;
-			mouseSensitvity_aiming = 1.6f;
-			mouseSensitvity_running = 1;
-		} else {
-			mouseSensitvity_notAiming = startLook;
-			mouseSensitvity_aiming = startAim;
-			mouseSensitvity_running = startRun;
-		}
-	}
-
 
 	private Vector3 velV;
 	[HideInInspector]
@@ -337,16 +289,14 @@ public class GunScript : MonoBehaviour {
 	 */
 	void Shooting(){
 
-		if (!meeleAttack) {
-			if (currentStyle == GunStyles.nonautomatic) {
-				if (Input.GetButtonDown ("Fire1")) {
-					ShootMethod ();
-				}
+		if (currentStyle == GunStyles.nonautomatic) {
+			if (Input.GetButtonDown ("Fire1")) {
+				ShootMethod ();
 			}
-			if (currentStyle == GunStyles.automatic) {
-				if (Input.GetButton ("Fire1")) {
-					ShootMethod ();
-				}
+		}
+		if (currentStyle == GunStyles.automatic) {
+			if (Input.GetButton ("Fire1")) {
+				ShootMethod ();
 			}
 		}
 		waitTillNextFire -= roundsPerSecond * Time.deltaTime;
@@ -423,16 +373,11 @@ public class GunScript : MonoBehaviour {
 			if(bulletsInTheGun > 0){
 
 				int randomNumberForMuzzelFlash = Random.Range(0,5);
-				if (bullet)
-					Instantiate (bullet, bulletSpawnPlace.transform.position, bulletSpawnPlace.transform.rotation);
-				else
-					print ("Missing the bullet prefab");
+				
+				Instantiate (bullet, bulletSpawnPlace.transform.position, bulletSpawnPlace.transform.rotation);
 				holdFlash = Instantiate(muzzelFlash[randomNumberForMuzzelFlash], muzzelSpawn.transform.position /*- muzzelPosition*/, muzzelSpawn.transform.rotation * Quaternion.Euler(0,0,90) ) as GameObject;
 				holdFlash.transform.parent = muzzelSpawn.transform;
-				if (shoot_sound_source)
-					shoot_sound_source.Play ();
-				else
-					print ("Missing 'Shoot Sound Source'.");
+				shoot_sound_source.Play ();
 
 				RecoilMath();
 
@@ -441,10 +386,7 @@ public class GunScript : MonoBehaviour {
 			}
 				
 			else{
-				//if(!aiming)
 				StartCoroutine("Reload_Animation");
-				//if(emptyClip_sound_source)
-				//	emptyClip_sound_source.Play();
 			}
 
 		}
@@ -458,7 +400,7 @@ public class GunScript : MonoBehaviour {
 	* Waiting for 2 seconds and then seeting the reloaded clip.
 	*/
 	[Header("reload time after anima")]
-	[Tooltip("Time that passes after reloading. Depends on your reload animation length, because reloading can be interrupted via meele attack or running. So any action before this finishes will interrupt reloading.")]
+	[Tooltip("Time that passes after reloading. Depends on your reload animation length, because reloading can be interrupted via running. So any action before this finishes will interrupt reloading.")]
 	public float reloadChangeBulletsTime;
 	IEnumerator Reload_Animation(){
 		if(bulletsIHave > 0 && bulletsInTheGun < amountOfBulletsPerLoad && !reloading/* && !aiming*/){
@@ -477,9 +419,9 @@ public class GunScript : MonoBehaviour {
 
 
 
-			yield return new WaitForSeconds (reloadChangeBulletsTime - 0.5f);//minus ovo vrijeme cekanja na yield
-			if (meeleAttack == false && pmS.maxSpeed != runningSpeed) {
-				//print ("tu sam");
+			yield return new WaitForSeconds (reloadChangeBulletsTime - 0.5f);
+			if (pmS.maxSpeed != runningSpeed) {
+
 				if (player.GetComponent<PlayerMovementScript> ()._freakingZombiesSound)
 					player.GetComponent<PlayerMovementScript> ()._freakingZombiesSound.Play ();
 				else
@@ -501,7 +443,6 @@ public class GunScript : MonoBehaviour {
 			} else {
 				reloadSound_source.Stop ();
 
-				print ("Reload interrupted via meele attack");
 			}
 
 		}
@@ -523,7 +464,7 @@ public class GunScript : MonoBehaviour {
 			}
 		}
 		if(mls && HUD_bullets){
-			HUD_bullets.text = bulletsIHave.ToString() + " - " + bulletsInTheGun.ToString();
+			HUD_bullets.text = bulletsInTheGun.ToString() + " / " + bulletsIHave.ToString();
 		}
 
 		DrawCrosshair();
@@ -586,7 +527,7 @@ public class GunScript : MonoBehaviour {
 			handsAnimator.SetFloat("walkSpeed",pmS.currentSpeed);
 			handsAnimator.SetBool("aiming", Input.GetButton("Fire2"));
 			handsAnimator.SetInteger("maxSpeed", pmS.maxSpeed);
-			if(Input.GetKeyDown(KeyCode.R) && pmS.maxSpeed < 5 && !reloading && !meeleAttack/* && !aiming*/){
+			if(Input.GetKeyDown(KeyCode.R) && pmS.maxSpeed < 5 && !reloading/* && !aiming*/){
 				StartCoroutine("Reload_Animation");
 			}
 		}
@@ -596,5 +537,4 @@ public class GunScript : MonoBehaviour {
 	[Header("Animation names")]
 	public string reloadAnimationName = "Player_Reload";
 	public string aimingAnimationName = "Player_AImpose";
-	public string meeleAnimationName = "Character_Malee";
 }
