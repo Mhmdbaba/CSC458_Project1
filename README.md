@@ -1,8 +1,8 @@
-<style>
+<!-- <style>
 table, td{
     border: 1px solid black;
 }
-</style>
+</style> -->
 
 <h1>CSC458_Project1</h1>
 
